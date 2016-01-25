@@ -91,7 +91,18 @@ public class DriveTrain extends Subsystem {
 	 * @param right Speed in range [-1,1]
 	 */
 	public void drive(double left, double right) {
-		drive.tankDrive(left, right);
+		//drive.tankDrive(left, right);
+		double vMax=0.5;
+		if(left<=vMax&&right<=vMax)
+		{drive.tankDrive(left, right);}
+		else{
+		if(left>vMax && right<=vMax)
+		{drive.tankDrive(left-(left-vMax),right);}
+		else {
+		if(right>vMax && left<=vMax){
+		drive.tankDrive(left, right-(right-vMax));}
+		else{if(left>vMax && right>vMax)
+		drive.tankDrive(left-(left-vMax), right-(right-vMax));}}}
 	}
 
 	/**
@@ -99,7 +110,8 @@ public class DriveTrain extends Subsystem {
 	 */
 	public void drive(Joystick joy) {
 		//drive(-joy.getY(), -joy.getAxis(AxisType.kThrottle));
-		drive.tankDrive(joy.getRawAxis(1), joy.getRawAxis(5));
+		drive.tankDrive(-joy.getRawAxis(1), -joy.getRawAxis(5));
+		
 	}
 
 	/**
@@ -133,6 +145,10 @@ public class DriveTrain extends Subsystem {
 		return rangefinder.getAverageVoltage();
 	}
 	
+	public RobotDrive getDrive() {
+        return drive;
+    }
+	
 	public void setMotores(double velocidad){
 		if (velocidad>1.0){
 			velocidad=1.0;
@@ -140,9 +156,11 @@ public class DriveTrain extends Subsystem {
 		if (velocidad<-1.0){
 			velocidad=-1.0;
 		}
-		front_left_motor.set(velocidad);
-		back_left_motor.set(velocidad);
-		front_right_motor.set(velocidad);
-		back_right_motor.set(velocidad);
+		//front_left_motor.set(velocidad);
+		//back_left_motor.set(velocidad);
+		//front_right_motor.set(velocidad);
+		//back_right_motor.set(velocidad);
+		
+		drive.tankDrive(velocidad, velocidad);
 	}
 }
