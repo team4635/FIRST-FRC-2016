@@ -132,4 +132,17 @@ public class DriveTrain extends Subsystem {
 		// Really meters in simulation since it's a rangefinder...
 		return rangefinder.getAverageVoltage();
 	}
+	
+	public void setMotores(double velocidad){
+		if (velocidad>1.0){
+			velocidad=1.0;
+		}
+		if (velocidad<-1.0){
+			velocidad=-1.0;
+		}
+		front_left_motor.set(velocidad);
+		back_left_motor.set(velocidad);
+		front_right_motor.set(velocidad);
+		back_right_motor.set(velocidad);
+	}
 }

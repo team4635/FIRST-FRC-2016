@@ -37,6 +37,8 @@ public class OI {
         JoystickButton r2 = new JoystickButton(joy, 10);
         JoystickButton l1 = new JoystickButton(joy, 11);
         JoystickButton r1 = new JoystickButton(joy, 12);
+        
+        JoystickButton aXbox = new JoystickButton(joy, 1);
 
         // Connect the buttons to commands
         d_up.whenPressed(new SetElevatorSetpoint(0.2));
@@ -48,6 +50,8 @@ public class OI {
         r2.whenPressed(new Pickup());
         l1.whenPressed(new Place());
         l2.whenPressed(new Autonomous());
+        
+        aXbox.toggleWhenPressed(new toggleMotores());
     }
     
     public Joystick getJoystick() {
