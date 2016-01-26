@@ -23,6 +23,7 @@ public class DriveTrain extends Subsystem {
 	private SpeedController front_left_motor, back_left_motor,
 							front_right_motor, back_right_motor;
 	private RobotDrive drive;
+	//private RobotDrive lanzadorDrive;
 	private Encoder left_encoder, right_encoder;
 	private AnalogInput rangefinder;
 	private AnalogGyro gyro;
@@ -33,8 +34,11 @@ public class DriveTrain extends Subsystem {
 		back_left_motor = new Talon(2);
 		front_right_motor = new Talon(3);
 		back_right_motor = new Talon(4);
+		//lanzador_izquierdo_motor= new Talon(5);
+		//lanzador_derecho_motor = new Talon(6);
 		drive = new RobotDrive(front_left_motor, back_left_motor,
 							   front_right_motor, back_right_motor);
+		//lanzadorDrive = new RobotDrive(lanzador_izquierdo_motor, lanzador_derecho_motor);
 		left_encoder = new Encoder(1, 2);
 		right_encoder = new Encoder(3, 4);
 
