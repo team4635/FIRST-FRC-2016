@@ -28,8 +28,9 @@ public class toggleMotores extends Command {
 		// TODO Auto-generated method stub
 		//drive.drive(joy);
 		//if(joy.getRawAxis(1)==0.0&&joy.getRawAxis(5)==0.0){
-			Robot.drivetrain.setMotores(.4);
 		//}else{DriveTrain.drive(-joy.getRawAxis(1), -joy.getRawAxis(5));}
+		
+		Robot.drivetrain.setMotores(1.0);
 	}
 
 	protected boolean isFinished() {
