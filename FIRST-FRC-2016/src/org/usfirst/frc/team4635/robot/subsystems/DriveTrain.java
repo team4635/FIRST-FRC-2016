@@ -113,6 +113,8 @@ public class DriveTrain extends Subsystem {
 		drive.tankDrive(-joy.getRawAxis(1), -joy.getRawAxis(5));
 		
 	}
+	
+	
 
 	/**
 	 * @return The robots heading in degrees.
@@ -149,6 +151,11 @@ public class DriveTrain extends Subsystem {
         return drive;
     }
 	
+	public void turnMe(double speed){
+
+		drive.tankDrive(speed, -speed);
+	}
+	
 	public void setMotores(double velocidad){
 		if (velocidad>1.0){
 			velocidad=1.0;
@@ -156,10 +163,6 @@ public class DriveTrain extends Subsystem {
 		if (velocidad<-1.0){
 			velocidad=-1.0;
 		}
-		//front_left_motor.set(velocidad);
-		//back_left_motor.set(velocidad);
-		//front_right_motor.set(velocidad);
-		//back_right_motor.set(velocidad);
 		
 		drive.tankDrive(velocidad, velocidad);
 	}
