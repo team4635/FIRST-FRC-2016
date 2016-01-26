@@ -52,7 +52,7 @@ public class OI {
         l1.whenPressed(new Place());
         l2.whenPressed(new Autonomous());
         
-        xXbox.whenReleased(new gira90());
+       // xXbox.whenReleased(new gira90());
         aXbox.toggleWhenPressed(new toggleMotores());
     }
     
