@@ -37,7 +37,8 @@ public class OI {
         JoystickButton r2 = new JoystickButton(joy, 10);
         JoystickButton l1 = new JoystickButton(joy, 11);
         JoystickButton r1 = new JoystickButton(joy, 12);
-        
+       
+        JoystickButton xXbox = new JoystickButton(joy, 3);
         JoystickButton aXbox = new JoystickButton(joy, 1);
 
         // Connect the buttons to commands
@@ -51,6 +52,7 @@ public class OI {
         l1.whenPressed(new Place());
         l2.whenPressed(new Autonomous());
         
+       // xXbox.whenReleased(new gira90());
         aXbox.toggleWhenPressed(new toggleMotores());
     }
     
