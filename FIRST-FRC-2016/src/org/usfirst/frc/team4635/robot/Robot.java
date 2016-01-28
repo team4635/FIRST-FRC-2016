@@ -15,6 +15,8 @@ import org.usfirst.frc.team4635.robot.commands.Autonomous;
 import org.usfirst.frc.team4635.robot.subsystems.Claw;
 import org.usfirst.frc.team4635.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4635.robot.subsystems.Elevator;
+import org.usfirst.frc.team4635.robot.subsystems.Lanzamiento;
+import org.usfirst.frc.team4635.robot.subsystems.Succion;
 import org.usfirst.frc.team4635.robot.subsystems.Wrist;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
@@ -32,7 +34,10 @@ public class Robot extends IterativeRobot {
     public static Elevator elevator;
     public static Wrist wrist;
     public static Claw claw;
+    public static Lanzamiento lanzamiento;
+    public static Succion succion;
     public static OI oi;
+    
 
     /**
      * This function is run when the robot is first started up and should be
@@ -44,7 +49,10 @@ public class Robot extends IterativeRobot {
         elevator = new Elevator();
         wrist = new Wrist();
         claw = new Claw();
+        lanzamiento = new Lanzamiento();
+        succion = new Succion();
         oi = new OI();
+       
         
         // instantiate the command used for the autonomous period
         autonomousCommand = new Autonomous();

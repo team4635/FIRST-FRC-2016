@@ -40,8 +40,7 @@ public class OI {
        
         //JoystickButton xXbox = new JoystickButton(joy, 3);
         JoystickButton aXbox = new JoystickButton(joy, 1);
-        //JoystickButton dada = new JoystickButton(joystick, buttonNumber)
-
+        JoystickButton yXbox = new JoystickButton(joy, 4);
         // Connect the buttons to commands
         d_up.whenPressed(new SetElevatorSetpoint(0.2));
         d_down.whenPressed(new SetElevatorSetpoint(-0.2));
@@ -54,7 +53,8 @@ public class OI {
         l2.whenPressed(new Autonomous());
         
        // xXbox.whenReleased(new gira90());
-        aXbox.toggleWhenPressed(new toggleMotores());
+        aXbox.toggleWhenPressed(new ToggleLanzar());
+        yXbox.whileHeld(new Succionar());
     }
     
     public Joystick getJoystick() {

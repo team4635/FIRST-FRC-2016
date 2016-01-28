@@ -23,12 +23,12 @@ public class DriveTrain extends Subsystem {
 	private SpeedController front_left_motor, back_left_motor,
 							front_right_motor, back_right_motor;
 	
-	private SpeedController lanzador_izquierdo_motor;
-	private SpeedController lanzador_derecho_motor;
+	//private SpeedController lanzador_izquierdo_motor;
+	///private SpeedController lanzador_derecho_motor;
 	
 	private RobotDrive drive;
 	
-	private RobotDrive lanzadorDrive;
+	//private RobotDrive lanzadorDrive;
 	
 	private Encoder left_encoder, right_encoder;
 	private AnalogInput rangefinder;
@@ -41,13 +41,13 @@ public class DriveTrain extends Subsystem {
 		front_right_motor = new Talon(3);
 		back_right_motor = new Talon(4);
 		
-		lanzador_izquierdo_motor = new Talon(5);
-		lanzador_derecho_motor = new Talon(6);
+		//lanzador_izquierdo_motor = new Talon(5);
+		//lanzador_derecho_motor = new Talon(6);
 		
 		drive = new RobotDrive(front_left_motor, back_left_motor,
 							   front_right_motor, back_right_motor);
 		
-		lanzadorDrive = new RobotDrive(lanzador_izquierdo_motor, lanzador_derecho_motor);
+		//lanzadorDrive = new RobotDrive(lanzador_izquierdo_motor, lanzador_derecho_motor);
 		
 		left_encoder = new Encoder(1, 2);
 		right_encoder = new Encoder(3, 4);
@@ -187,12 +187,4 @@ public class DriveTrain extends Subsystem {
 		//drive.tankDrive(speed, -speed);
 	//}
 	
-	public void setMotores(double velocidadIzquierda, double velocidadDerecha){
-		//drive.tankDrive(velocidadIzquierda, velocidadDerecha);
-		
-		//lanzador_izquierdo_motor.set(velocidadIzquierda);
-		//lanzador_derecho_motor.set(velocidadDerecha);
-		
-		lanzadorDrive.tankDrive(velocidadIzquierda, velocidadDerecha);
-	}
 }
