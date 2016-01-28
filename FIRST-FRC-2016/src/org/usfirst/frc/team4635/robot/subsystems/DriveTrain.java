@@ -124,24 +124,19 @@ public class DriveTrain extends Subsystem {
 	 */
 	public void drive(Joystick joy) {
 		//drive(-joy.getY(), -joy.getAxis(AxisType.kThrottle));
-		if(joy.getPOV()!=0&&(joy.getRawAxis(3)<0.1 && joy.getRawAxis(3)>-0.1) && (joy.getRawAxis(2)<0.1 && joy.getRawAxis(2)>-0.1))
+		if((joy.getRawAxis(3)<0.1 && joy.getRawAxis(3)>-0.1) && (joy.getRawAxis(2)<0.1 && joy.getRawAxis(2)>-0.1))
 			drive(-joy.getRawAxis(1), -joy.getRawAxis(5));
 			
-			if(joy.getPOV()!=0&&(joy.getRawAxis(3)<0.1 && joy.getRawAxis(3)>-0.1)&&
+			if((joy.getRawAxis(3)<0.1 && joy.getRawAxis(3)>-0.1)&&
 					(joy.getRawAxis(1)<0.1 && joy.getRawAxis(1)>-0.1)&&
 					(joy.getRawAxis(5)<0.1 && joy.getRawAxis(5)>-0.1))
 			drive(-joy.getRawAxis(2), -joy.getRawAxis(2));
 			
-			if(joy.getPOV()!=0&&(joy.getRawAxis(2)<0.1 && joy.getRawAxis(2)>-0.1)&&
+			if((joy.getRawAxis(2)<0.1 && joy.getRawAxis(2)>-0.1)&&
 					(joy.getRawAxis(1)<0.1 && joy.getRawAxis(1)>-0.1)&&
 					(joy.getRawAxis(5)<0.1 && joy.getRawAxis(5)>-0.1))
 			drive(joy.getRawAxis(3), joy.getRawAxis(3));
-			if((joy.getRawAxis(3)<0.1 && joy.getRawAxis(3)>-0.1)&&
-					(joy.getRawAxis(2)<0.1 && joy.getRawAxis(2)>-0.1)&&
-					(joy.getRawAxis(1)<0.1 && joy.getRawAxis(1)>-0.1)&&
-					(joy.getRawAxis(5)<0.1 && joy.getRawAxis(5)>-0.1)
-					&&joy.getPOV()==0)
-				drive( 0.5, 0.5);
+			
 		
 	}
 	
