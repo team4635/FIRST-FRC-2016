@@ -4,6 +4,8 @@
  */
 package org.usfirst.frc.team4635.robot.subsystems;
 
+import org.usfirst.frc.team4635.robot.commands.ToggleLanzar;
+
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Talon;
@@ -24,7 +26,9 @@ public class Lanzamiento extends Subsystem {
 
     }
 
-    public void initDefaultCommand() {}
+    public void initDefaultCommand() {
+    	setDefaultCommand(new ToggleLanzar());
+    }
     public void log() {}
     
     public void setMotoresLanzamiento(double velocidadIzquierda, double velocidadDerecha){
