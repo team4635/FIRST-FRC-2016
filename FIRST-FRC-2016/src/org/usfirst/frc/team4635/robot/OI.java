@@ -54,7 +54,8 @@ public class OI {
         
        // xXbox.whenReleased(new gira90());
         aXbox.toggleWhenPressed(new ToggleLanzar());
-        bXbox.whileHeld(new Succionar());
+        bXbox.whenPressed(new Succionar());
+        bXbox.whenReleased(new PararSuccion());
     }
     
     public Joystick getJoystick() {

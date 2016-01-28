@@ -22,7 +22,7 @@ public class ToggleLanzar extends Command {
 	protected void execute() {
 		// TODO Auto-generated method stub
 	
-		Robot.lanzamiento.setMotoresLanzamiento(1.0, 0.8);
+		Robot.lanzamiento.setMotoresLanzamiento(1.0, 1.0);
 	}
 
 	protected boolean isFinished() {
