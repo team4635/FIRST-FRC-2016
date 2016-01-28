@@ -32,7 +32,7 @@ public class Wrist extends PIDSubsystem {
         }
         setAbsoluteTolerance(2.5);
 
-        motor = new Victor(6);
+        motor = new Victor(9);
         
         // Conversion value of potentiometer varies between the real world and simulation
         if (Robot.isReal()) {

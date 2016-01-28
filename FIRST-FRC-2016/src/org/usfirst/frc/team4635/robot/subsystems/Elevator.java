@@ -32,7 +32,7 @@ public class Elevator extends PIDSubsystem {
         }
         setAbsoluteTolerance(0.005);
         
-        motor = new Victor(5);
+        motor = new Victor(8);
         
         // Conversion value of potentiometer varies between the real world and simulation
         if (Robot.isReal()) {
