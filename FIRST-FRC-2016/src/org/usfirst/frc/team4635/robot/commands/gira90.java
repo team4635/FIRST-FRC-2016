@@ -1,3 +1,4 @@
+/**
 package org.usfirst.frc.team4635.robot.commands;
 
 import org.usfirst.frc.team4635.robot.OI;
@@ -48,7 +49,7 @@ public class gira90 extends Command {
 
 	protected void end() {
 		// TODO Auto-generated method stub
-		Robot.drivetrain.setMotores(0.0);
+		Robot.drivetrain.setMotores(0.0, 0.0);
 
 	}
 
@@ -58,3 +59,4 @@ public class gira90 extends Command {
 	}
 
 }
+**/

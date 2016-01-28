@@ -38,8 +38,9 @@ public class OI {
         JoystickButton l1 = new JoystickButton(joy, 11);
         JoystickButton r1 = new JoystickButton(joy, 12);
        
-        JoystickButton xXbox = new JoystickButton(joy, 3);
+        //JoystickButton xXbox = new JoystickButton(joy, 3);
         JoystickButton aXbox = new JoystickButton(joy, 1);
+        //JoystickButton dada = new JoystickButton(joystick, buttonNumber)
 
         // Connect the buttons to commands
         d_up.whenPressed(new SetElevatorSetpoint(0.2));

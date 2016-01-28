@@ -30,7 +30,7 @@ public class toggleMotores extends Command {
 		//if(joy.getRawAxis(1)==0.0&&joy.getRawAxis(5)==0.0){
 		//}else{DriveTrain.drive(-joy.getRawAxis(1), -joy.getRawAxis(5));}
 		
-		Robot.drivetrain.setMotores(1.0);
+		Robot.drivetrain.setMotores(0.5, 0.5);
 	}
 
 	protected boolean isFinished() {
@@ -40,7 +40,7 @@ public class toggleMotores extends Command {
 
 	protected void end() {
 		// TODO Auto-generated method stub
-		Robot.drivetrain.setMotores(0.0);
+		Robot.drivetrain.setMotores(0.0, 0.0);
 
 	}
 

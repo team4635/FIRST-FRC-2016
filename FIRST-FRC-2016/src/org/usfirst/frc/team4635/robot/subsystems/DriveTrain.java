@@ -22,8 +22,14 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class DriveTrain extends Subsystem {
 	private SpeedController front_left_motor, back_left_motor,
 							front_right_motor, back_right_motor;
+	
+	//private SpeedController lanzador_izquierdo_motor;
+	//private SpeedController lanzador_derecho_motor;
+	
 	private RobotDrive drive;
+	
 	//private RobotDrive lanzadorDrive;
+	
 	private Encoder left_encoder, right_encoder;
 	private AnalogInput rangefinder;
 	private AnalogGyro gyro;
@@ -34,11 +40,15 @@ public class DriveTrain extends Subsystem {
 		back_left_motor = new Talon(2);
 		front_right_motor = new Talon(3);
 		back_right_motor = new Talon(4);
-		//lanzador_izquierdo_motor= new Talon(5);
-		//lanzador_derecho_motor = new Talon(6);
+		
+		lanzador_izquierdo_motor = new Talon(5);
+		lanzador_derecho_motor = new Talon(6);
+		
 		drive = new RobotDrive(front_left_motor, back_left_motor,
 							   front_right_motor, back_right_motor);
+		
 		//lanzadorDrive = new RobotDrive(lanzador_izquierdo_motor, lanzador_derecho_motor);
+		
 		left_encoder = new Encoder(1, 2);
 		right_encoder = new Encoder(3, 4);
 
@@ -96,17 +106,17 @@ public class DriveTrain extends Subsystem {
 	 */
 	public void drive(double left, double right) {
 		//drive.tankDrive(left, right);
-		double vMax=0.5;
+		double vMax=0.6;
 		if(left<=vMax&&right<=vMax)
-		{drive.tankDrive(left, right);}
+			{drive.tankDrive(left, right);}
 		else{
-		if(left>vMax && right<=vMax)
-		{drive.tankDrive(left-(left-vMax),right);}
+			if(left>vMax && right<=vMax)
+				{drive.tankDrive(left-(left-vMax),right);}
 		else {
-		if(right>vMax && left<=vMax){
-		drive.tankDrive(left, right-(right-vMax));}
+			if(right>vMax && left<=vMax){
+					drive.tankDrive(left, right-(right-vMax));}
 		else{if(left>vMax && right>vMax)
-		drive.tankDrive(left-(left-vMax), right-(right-vMax));}}}
+			drive.tankDrive(left-(left-vMax), right-(right-vMax));}}}
 	}
 
 	/**
@@ -114,7 +124,24 @@ public class DriveTrain extends Subsystem {
 	 */
 	public void drive(Joystick joy) {
 		//drive(-joy.getY(), -joy.getAxis(AxisType.kThrottle));
-		drive.tankDrive(-joy.getRawAxis(1), -joy.getRawAxis(5));
+		if(joy.getPOV()!=0&&(joy.getRawAxis(3)<0.1 && joy.getRawAxis(3)>-0.1) && (joy.getRawAxis(2)<0.1 && joy.getRawAxis(2)>-0.1))
+			drive(-joy.getRawAxis(1), -joy.getRawAxis(5));
+			
+			if(joy.getPOV()!=0&&(joy.getRawAxis(3)<0.1 && joy.getRawAxis(3)>-0.1)&&
+					(joy.getRawAxis(1)<0.1 && joy.getRawAxis(1)>-0.1)&&
+					(joy.getRawAxis(5)<0.1 && joy.getRawAxis(5)>-0.1))
+			drive(-joy.getRawAxis(2), -joy.getRawAxis(2));
+			
+			if(joy.getPOV()!=0&&(joy.getRawAxis(2)<0.1 && joy.getRawAxis(2)>-0.1)&&
+					(joy.getRawAxis(1)<0.1 && joy.getRawAxis(1)>-0.1)&&
+					(joy.getRawAxis(5)<0.1 && joy.getRawAxis(5)>-0.1))
+			drive(joy.getRawAxis(3), joy.getRawAxis(3));
+			if((joy.getRawAxis(3)<0.1 && joy.getRawAxis(3)>-0.1)&&
+					(joy.getRawAxis(2)<0.1 && joy.getRawAxis(2)>-0.1)&&
+					(joy.getRawAxis(1)<0.1 && joy.getRawAxis(1)>-0.1)&&
+					(joy.getRawAxis(5)<0.1 && joy.getRawAxis(5)>-0.1)
+					&&joy.getPOV()==0)
+				drive( 0.5, 0.5);
 		
 	}
 	
@@ -155,19 +182,14 @@ public class DriveTrain extends Subsystem {
         return drive;
     }
 	
-	public void turnMe(double speed){
+	//public void turnMe(double speed){
 
-		drive.tankDrive(speed, -speed);
-	}
+		//drive.tankDrive(speed, -speed);
+	//}
 	
-	public void setMotores(double velocidad){
-		if (velocidad>1.0){
-			velocidad=1.0;
-		}
-		if (velocidad<-1.0){
-			velocidad=-1.0;
-		}
-		
-		drive.tankDrive(velocidad, velocidad);
+	public void setMotores(double velocidadIzquierda, double velocidadDerecha){
+		drive.tankDrive(velocidadIzquierda, velocidadDerecha);
+		//lanzador_izquierdo_motor.set(velocidadIzquierda);
+		//lanzador_derecho_motor.set(velocidadDerecha);
 	}
 }
