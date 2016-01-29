@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class OI {
     private Joystick joy = new Joystick(0);
+    private Joystick joyCopiloto = new Joystick(1);
 
     public OI() {
     	// Put Some buttons on the SmartDashboard
@@ -39,8 +40,12 @@ public class OI {
         JoystickButton r1 = new JoystickButton(joy, 12);
        
         //JoystickButton xXbox = new JoystickButton(joy, 3);
-        JoystickButton aXbox = new JoystickButton(joy, 1);
-        JoystickButton bXbox = new JoystickButton(joy, 2);
+        JoystickButton btnACopiloto = new JoystickButton(joyCopiloto, 1);
+        JoystickButton btnBCopiloto = new JoystickButton(joyCopiloto, 2);
+        JoystickButton btnBumperIzqPiloto = new JoystickButton(joy, 5);
+        JoystickButton btnBumperDerPiloto = new JoystickButton(joy, 6);
+
+        
         // Connect the buttons to commands
         d_up.whenPressed(new SetElevatorSetpoint(0.2));
         d_down.whenPressed(new SetElevatorSetpoint(-0.2));
@@ -53,9 +58,11 @@ public class OI {
         l2.whenPressed(new Autonomous());
         
        // xXbox.whenReleased(new gira90());
-        //aXbox.toggleWhenPressed(new ToggleLanzar());
-        bXbox.whenPressed(new Succionar());
-        bXbox.whenReleased(new PararSuccion());
+        btnACopiloto.whenPressed(new Lanzar());
+        btnBCopiloto.whenPressed(new Succionar());
+        btnBCopiloto.whenReleased(new PararSuccion());
+        btnBumperIzqPiloto.whileHeld(new RotarIzquierda());
+        btnBumperDerPiloto.whileHeld(new RotarDerecha());
     }
     
     public Joystick getJoystick() {

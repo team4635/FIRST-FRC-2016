@@ -4,7 +4,7 @@
  */
 package org.usfirst.frc.team4635.robot.subsystems;
 
-import org.usfirst.frc.team4635.robot.commands.ToggleLanzar;
+import org.usfirst.frc.team4635.robot.commands.Lanzar;
 
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.SpeedController;
@@ -27,7 +27,7 @@ public class Lanzamiento extends Subsystem {
     }
 
     public void initDefaultCommand() {
-    	setDefaultCommand(new ToggleLanzar());
+    	setDefaultCommand(new Lanzar());
     }
     public void log() {}
     

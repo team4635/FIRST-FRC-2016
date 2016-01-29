@@ -182,4 +182,11 @@ public class DriveTrain extends Subsystem {
 		//drive.tankDrive(speed, -speed);
 	//}
 	
+	public void rotarMotoresIzquierda(double velocidad){
+		drive.tankDrive(-velocidad, velocidad);
+	}
+	public void rotarMotoresDerecha(double velocidad){
+		drive.tankDrive(velocidad, -velocidad);
+	}
+	
 }
