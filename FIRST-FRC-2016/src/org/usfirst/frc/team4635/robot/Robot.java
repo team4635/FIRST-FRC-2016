@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team4635.robot.commands.Autonomous;
+import org.usfirst.frc.team4635.robot.commands.ControlPWM;
 import org.usfirst.frc.team4635.robot.subsystems.Claw;
 import org.usfirst.frc.team4635.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4635.robot.subsystems.Elevator;
@@ -29,6 +30,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
     Command autonomousCommand;
+    Command controlPWM;
     
     public static DriveTrain drivetrain;
     public static Elevator elevator;
@@ -56,6 +58,7 @@ public class Robot extends IterativeRobot {
         
         // instantiate the command used for the autonomous period
         autonomousCommand = new Autonomous();
+        controlPWM = new ControlPWM();
 
         // Show what command your subsystem is running on the SmartDashboard
         SmartDashboard.putData(drivetrain);
@@ -90,6 +93,8 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         log();
+        controlPWM.start();
+
     }
     
     /**

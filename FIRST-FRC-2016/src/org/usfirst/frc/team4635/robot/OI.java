@@ -59,6 +59,7 @@ public class OI {
         
        // xXbox.whenReleased(new gira90());
         btnACopiloto.whenPressed(new Lanzar());
+        //btnACopiloto.whenPressed(new ControlPWM());
         btnBCopiloto.whenPressed(new Succionar());
         btnBCopiloto.whenReleased(new PararSuccion());
         btnBumperIzqPiloto.whileHeld(new RotarIzquierda());
