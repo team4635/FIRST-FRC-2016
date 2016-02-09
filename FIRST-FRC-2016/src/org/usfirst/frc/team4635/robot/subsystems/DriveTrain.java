@@ -145,17 +145,21 @@ public class DriveTrain extends Subsystem {
 	public void drive(Joystick joy) {
 		//drive(-joy.getY(), -joy.getAxis(AxisType.kThrottle));
 		if((joy.getRawAxis(3)<0.1 && joy.getRawAxis(3)>-0.1) && (joy.getRawAxis(2)<0.1 && joy.getRawAxis(2)>-0.1))
-			drive(-joy.getRawAxis(1), -joy.getRawAxis(5), vMax);
+			drive(-joy.getRawAxis(1), -joy.getRawAxis(5));
+			//drive(-joy.getRawAxis(1), -joy.getRawAxis(5), vMax);
+			
 			
 			if((joy.getRawAxis(3)<0.1 && joy.getRawAxis(3)>-0.1)&&
 					(joy.getRawAxis(1)<0.1 && joy.getRawAxis(1)>-0.1)&&
 					(joy.getRawAxis(5)<0.1 && joy.getRawAxis(5)>-0.1))
-			drive(-joy.getRawAxis(2), -joy.getRawAxis(2), vMax);
+				drive(-joy.getRawAxis(2), -joy.getRawAxis(2));
+			//drive(-joy.getRawAxis(2), -joy.getRawAxis(2), vMax);
 			
 			if((joy.getRawAxis(2)<0.1 && joy.getRawAxis(2)>-0.1)&&
 					(joy.getRawAxis(1)<0.1 && joy.getRawAxis(1)>-0.1)&&
 					(joy.getRawAxis(5)<0.1 && joy.getRawAxis(5)>-0.1))
-			drive(joy.getRawAxis(3), joy.getRawAxis(3), vMax);
+				drive(joy.getRawAxis(3), joy.getRawAxis(3));
+			//drive(joy.getRawAxis(3), joy.getRawAxis(3), vMax);
 			
 		
 	}

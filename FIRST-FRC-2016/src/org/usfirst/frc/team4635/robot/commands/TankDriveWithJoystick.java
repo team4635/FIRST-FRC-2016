@@ -25,7 +25,19 @@ public class TankDriveWithJoystick extends Command {
     protected void execute() {
         Robot.drivetrain.drive(Robot.oi.getJoystick());
         //System.out.println("Estado POV: " + joy.getPOV(0));
-        }
+        /**if(joy.getPOV()==0){
+			Robot.drivetrain.vMax=1.0;
+		}
+		if(joy.getPOV()==90){
+			Robot.drivetrain.vMax=0.4;
+		}
+		if(joy.getPOV()==180){
+			Robot.drivetrain.vMax=0.6;
+		}
+		if(joy.getPOV()==270){
+			Robot.drivetrain.vMax=0.8;
+		}**/
+    }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {

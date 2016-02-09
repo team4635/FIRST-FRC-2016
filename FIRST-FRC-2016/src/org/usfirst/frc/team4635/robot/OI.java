@@ -42,6 +42,7 @@ public class OI {
         //JoystickButton xXbox = new JoystickButton(joy, 3);
         JoystickButton btnACopiloto = new JoystickButton(joyCopiloto, 1);
         JoystickButton btnBCopiloto = new JoystickButton(joyCopiloto, 2);
+        JoystickButton btnYCopiloto = new JoystickButton(joyCopiloto, 4);
         JoystickButton btnBumperIzqPiloto = new JoystickButton(joy, 5);
         JoystickButton btnBumperDerPiloto = new JoystickButton(joy, 6);
 
@@ -58,10 +59,12 @@ public class OI {
         l2.whenPressed(new Autonomous());
         
        // xXbox.whenReleased(new gira90());
-        btnACopiloto.whenPressed(new Lanzar());
+        
+        //btnACopiloto.whenPressed(new Lanzar());
         //btnACopiloto.whenPressed(new ControlPWM());
         btnBCopiloto.whenPressed(new Succionar());
         btnBCopiloto.whenReleased(new PararSuccion());
+        btnYCopiloto.toggleWhenPressed(new LevantarPistones());
         btnBumperIzqPiloto.whileHeld(new RotarIzquierda());
         btnBumperDerPiloto.whileHeld(new RotarDerecha());
     }
