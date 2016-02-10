@@ -43,6 +43,7 @@ public class OI {
         JoystickButton btnACopiloto = new JoystickButton(joyCopiloto, 1);
         JoystickButton btnBCopiloto = new JoystickButton(joyCopiloto, 2);
         JoystickButton btnYCopiloto = new JoystickButton(joyCopiloto, 4);
+        JoystickButton btnXCopiloto = new JoystickButton(joyCopiloto, 3);
         JoystickButton btnBumperIzqPiloto = new JoystickButton(joy, 5);
         JoystickButton btnBumperDerPiloto = new JoystickButton(joy, 6);
 
@@ -60,17 +61,26 @@ public class OI {
         
        // xXbox.whenReleased(new gira90());
         
-        //btnACopiloto.whenPressed(new Lanzar());
+        btnACopiloto.whileHeld(new MotoresLanzar());
+        //btnACopiloto.whileHeld(new PistonLanzar());
+        btnACopiloto.whenPressed(new AbrirPistonLanzar());
+        btnACopiloto.whenReleased(new CerrarPistonLanzar());
         //btnACopiloto.whenPressed(new ControlPWM());
+        //btnACopiloto.whenPressed(new PistonLanzar());
+
         btnBCopiloto.whenPressed(new Succionar());
         btnBCopiloto.whenReleased(new PararSuccion());
-        btnYCopiloto.toggleWhenPressed(new LevantarPistones());
+        //btnYCopiloto.whenPressed(new LevantarPistones());
+        //btnXCopiloto.whenPressed(new BajarPistones());
         btnBumperIzqPiloto.whileHeld(new RotarIzquierda());
         btnBumperDerPiloto.whileHeld(new RotarDerecha());
     }
     
     public Joystick getJoystick() {
         return joy;
+    }
+    public Joystick getJoystickCopiloto() {
+    	return joyCopiloto;
     }
 }
 

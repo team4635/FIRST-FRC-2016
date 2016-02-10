@@ -9,57 +9,31 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class MotoresLanzar extends Command {
-	//Joystick joy;
 	
 	public MotoresLanzar() {
 		requires(Robot.lanzamiento);
-        setTimeout(4);
+       // setTimeout(4.0);
 
 	}
 	
 	protected void initialize() {
 		// TODO Auto-generated method stub
-		//joy = Robot.oi.getJoystick();
 	}
 
 	protected void execute() {
 		// TODO Auto-generated method stub
-		/**if(joy.getPOV()==0){
-			Robot.lanzamiento.setMotoresLanzamiento(1.0, 1.0);
-		}
-		if(joy.getPOV()==45){
-			Robot.lanzamiento.setMotoresLanzamiento(1.0, 0.8);
-		}
-		if(joy.getPOV()==90){
-			Robot.lanzamiento.setMotoresLanzamiento(1.0, 0.65);
-		}
-		if(joy.getPOV()==315){
-			Robot.lanzamiento.setMotoresLanzamiento(0.8, 1.0);
-		}
-		if(joy.getPOV()==270){
-			Robot.lanzamiento.setMotoresLanzamiento(0.65, 1.0);
-		}
-		**/
-		/**if(joy.getPOV()==0){
-			Robot.drivetrain.vMax=1.0;
-		}
-		if(joy.getPOV()==90){
-			Robot.drivetrain.vMax=0.4;
-		}
-		if(joy.getPOV()==180){
-			Robot.drivetrain.vMax=0.6;
-		}
-		if(joy.getPOV()==270){
-			Robot.drivetrain.vMax=0.8;
-		}**/
+		
 		Robot.lanzamiento.setMotoresLanzamiento(1.0, 1.0);
+		
+		
 		
 		
 	}
 
 	protected boolean isFinished() {
 		// TODO Auto-generated method stub
-        return isTimedOut();
+        //return isTimedOut();
+		return false;
 	}
 
 	protected void end() {

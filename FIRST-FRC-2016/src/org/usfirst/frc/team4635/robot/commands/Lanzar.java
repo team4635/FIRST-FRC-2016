@@ -5,7 +5,9 @@ import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class Lanzar extends CommandGroup {
     public Lanzar() {
-    	addParallel(new MotoresLanzar());
+    	//addParallel(new MotoresLanzar());
     	addParallel(new PistonLanzar());	
+    	//addParallel(new MotoresLanzar());
+
     }
 }

@@ -106,37 +106,12 @@ public class DriveTrain extends Subsystem {
 	 * @param right Speed in range [-1,1]
 	 */
 	public void drive(double left, double right) {
-		//drive.tankDrive(left, right);
-		double vMax=1.0;
-		if(left<=vMax&&right<=vMax)
-			{drive.tankDrive(left, right);}
-		else{
-			if(left>vMax && right<=vMax)
-				{drive.tankDrive(left-(left-vMax),right);}
-		else {
-			if(right>vMax && left<=vMax){
-					drive.tankDrive(left, right-(right-vMax));}
-		else{if(left>vMax && right>vMax)
-			drive.tankDrive(left-(left-vMax), right-(right-vMax));}}}
+		drive.tankDrive(left, right);
 	}
 	public void drive(double left, double right, double vMax) {
 		//drive.tankDrive(left, right);
-		double left1=left, right1=right;
-		if(left<0)
-			left1=-1.0*left;
-		if(right<0)
-			right=-1.0*right;
 		
-		if(left1<=vMax&&right1<=vMax)
-			{drive.tankDrive(left, right);}
-		else{
-			if(left>vMax && right<=vMax)
-				{drive.tankDrive(left-(left-vMax),right);}
-		else {
-			if(right1>vMax && left1<=vMax){
-					drive.tankDrive(left, right-(right-vMax));}
-		else{if(left1>vMax && right1>vMax)
-			drive.tankDrive(left-(left-vMax), right-(right-vMax));}}}
+		drive.tankDrive(left*vMax, right*vMax);
 	}
 
 	/**
@@ -146,20 +121,20 @@ public class DriveTrain extends Subsystem {
 		//drive(-joy.getY(), -joy.getAxis(AxisType.kThrottle));
 		if((joy.getRawAxis(3)<0.1 && joy.getRawAxis(3)>-0.1) && (joy.getRawAxis(2)<0.1 && joy.getRawAxis(2)>-0.1))
 			drive(-joy.getRawAxis(1), -joy.getRawAxis(5));
-			//drive(-joy.getRawAxis(1), -joy.getRawAxis(5), vMax);
+			drive(-joy.getRawAxis(1), -joy.getRawAxis(5), vMax);
 			
 			
 			if((joy.getRawAxis(3)<0.1 && joy.getRawAxis(3)>-0.1)&&
 					(joy.getRawAxis(1)<0.1 && joy.getRawAxis(1)>-0.1)&&
 					(joy.getRawAxis(5)<0.1 && joy.getRawAxis(5)>-0.1))
 				drive(-joy.getRawAxis(2), -joy.getRawAxis(2));
-			//drive(-joy.getRawAxis(2), -joy.getRawAxis(2), vMax);
+			drive(-joy.getRawAxis(2), -joy.getRawAxis(2), vMax);
 			
 			if((joy.getRawAxis(2)<0.1 && joy.getRawAxis(2)>-0.1)&&
 					(joy.getRawAxis(1)<0.1 && joy.getRawAxis(1)>-0.1)&&
 					(joy.getRawAxis(5)<0.1 && joy.getRawAxis(5)>-0.1))
 				drive(joy.getRawAxis(3), joy.getRawAxis(3));
-			//drive(joy.getRawAxis(3), joy.getRawAxis(3), vMax);
+			drive(joy.getRawAxis(3), joy.getRawAxis(3), vMax);
 			
 		
 	}

@@ -7,12 +7,12 @@ import org.usfirst.frc.team4635.robot.subsystems.Pistones;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class PistonLanzar extends Command {
+public class AbrirPistonLanzar extends Command {
 	//Joystick joy;
 	
-	public PistonLanzar() {
+	public AbrirPistonLanzar() {
 		requires(Robot.pistones);
-        //setTimeout(4.0);
+        setTimeout(2.0);
 
 	}
 	
@@ -20,7 +20,7 @@ public class PistonLanzar extends Command {
 		// TODO Auto-generated method stub
 		//Robot.lanzamiento.setMotoresLanzamiento(1.0, 1.0);
 		//Timer.delay(2);
-		Robot.pistones.empujeAbrir();
+		//Robot.pistones.empujeAbrir();
 	}
 
 	protected void execute() {
@@ -30,14 +30,13 @@ public class PistonLanzar extends Command {
 
 	protected boolean isFinished() {
 		// TODO Auto-generated method stub
-        //return isTimedOut();
-		return false;
+        return isTimedOut();
+		//return false;
 	}
 
 	protected void end() {
 		// TODO Auto-generated method stub
-		Robot.pistones.empujeCerrar();
-
+		Robot.pistones.empujeAbrir();
 	}
 
 	protected void interrupted() {

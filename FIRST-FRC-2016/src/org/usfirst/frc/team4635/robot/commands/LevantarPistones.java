@@ -20,17 +20,17 @@ public class LevantarPistones extends Command {
 
 	protected void execute() {
 		// TODO Auto-generated method stub
-	
+
 	}
 
 	protected boolean isFinished() {
 		// TODO Auto-generated method stub
 		return false;
+		
 	}
 
 	protected void end() {
 		// TODO Auto-generated method stub
-		Robot.pistones.bajar();
 
 	}
 
