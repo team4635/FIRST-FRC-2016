@@ -27,7 +27,7 @@ public class Lanzamiento extends Subsystem {
     }
 
     public void initDefaultCommand() {
-    	setDefaultCommand(new MotoresLanzar());
+    	//setDefaultCommand(new MotoresLanzar());
     }
     public void log() {}
     

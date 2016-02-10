@@ -12,7 +12,7 @@ public class CerrarPistonLanzar extends Command {
 	
 	public CerrarPistonLanzar() {
 		requires(Robot.pistones);
-        //setTimeout(4.0);
+        setTimeout(.2);
 
 	}
 	
@@ -20,7 +20,7 @@ public class CerrarPistonLanzar extends Command {
 		// TODO Auto-generated method stub
 		//Robot.lanzamiento.setMotoresLanzamiento(1.0, 1.0);
 		//Timer.delay(2);
-		Robot.pistones.empujeCerrar();
+		//Robot.pistones.empujeCerrar();
 
 	}
 
@@ -31,12 +31,13 @@ public class CerrarPistonLanzar extends Command {
 
 	protected boolean isFinished() {
 		// TODO Auto-generated method stub
-        //return isTimedOut();
-		return false;
+        return isTimedOut();
+		//return false;
 	}
 
 	protected void end() {
 		// TODO Auto-generated method stub
+		//Robot.pistones.empujeCerrar();
 		Robot.pistones.empujeCerrar();
 
 	}

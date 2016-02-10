@@ -21,7 +21,7 @@ public class Pistones extends Subsystem {
         super();
         pistonLevantamiento1 = new DoubleSolenoid(3,0);
         //pistonLevantamiento2 = new DoubleSolenoid(1,4);
-        pistonEmpuje = new DoubleSolenoid(2,5);
+        pistonEmpuje = new DoubleSolenoid(1,4);
         
     }
 
