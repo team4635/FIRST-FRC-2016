@@ -96,7 +96,7 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         log();
-        controlPWM.start();
+        //controlPWM.start();
 
     }
     
