@@ -31,7 +31,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
     Command autonomousCommand;
-    Command controlPWM;
+    //Command controlPWM;
     
     public static DriveTrain drivetrain;
     public static Elevator elevator;
@@ -61,7 +61,7 @@ public class Robot extends IterativeRobot {
         
         // instantiate the command used for the autonomous period
         autonomousCommand = new Autonomous();
-        controlPWM = new ControlPWM();
+        //controlPWM = new ControlPWM();
 
         // Show what command your subsystem is running on the SmartDashboard
         SmartDashboard.putData(drivetrain);
