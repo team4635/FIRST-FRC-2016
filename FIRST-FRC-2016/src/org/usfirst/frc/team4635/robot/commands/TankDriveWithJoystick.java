@@ -50,10 +50,10 @@ public class TankDriveWithJoystick extends Command {
 			Robot.drivetrain.vMax=1.0;
 		}
 		if(joy.getPOV()==90){
-			Robot.drivetrain.vMax=0.4;
+			Robot.drivetrain.vMax=0.6;
 		}
 		if(joy.getPOV()==180){
-			Robot.drivetrain.vMax=0.6;
+			Robot.drivetrain.vMax=0.7;
 		}
 		if(joy.getPOV()==270){
 			Robot.drivetrain.vMax=0.8;

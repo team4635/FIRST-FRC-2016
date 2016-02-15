@@ -19,7 +19,7 @@ public class RotarDerecha extends Command {
 	}
 
 	protected void execute() {
-		Robot.drivetrain.rotarMotoresDerecha(0.5);
+		Robot.drivetrain.drive(1.0,-1.0,DriveTrain.vMax);
 	}
 
 	protected boolean isFinished() {

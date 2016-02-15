@@ -19,7 +19,7 @@ public class RotarIzquierda extends Command {
 	}
 
 	protected void execute() {
-		Robot.drivetrain.rotarMotoresIzquierda(0.5);
+		Robot.drivetrain.drive(-1.0,1.0,DriveTrain.vMax);
 	}
 
 	protected boolean isFinished() {
@@ -29,7 +29,7 @@ public class RotarIzquierda extends Command {
 
 	protected void end() {
 		// TODO Auto-generated method stub
-		Robot.drivetrain.rotarMotoresIzquierda(0.5);
+		Robot.drivetrain.rotarMotoresIzquierda(0.0);
 	}
 
 	protected void interrupted() {
