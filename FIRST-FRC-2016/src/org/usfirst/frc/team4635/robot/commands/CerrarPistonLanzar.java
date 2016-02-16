@@ -2,7 +2,7 @@ package org.usfirst.frc.team4635.robot.commands;
 
 //import org.usfirst.frc.team4635.robot.OI;
 import org.usfirst.frc.team4635.robot.Robot;
-import org.usfirst.frc.team4635.robot.subsystems.Pistones;
+import org.usfirst.frc.team4635.robot.subsystems.PistonesL;
 
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
@@ -11,8 +11,8 @@ public class CerrarPistonLanzar extends Command {
 	//Joystick joy;
 	
 	public CerrarPistonLanzar() {
-		requires(Robot.pistones);
-        setTimeout(.2);
+		requires(Robot.pistonesE);
+        setTimeout(.3);
 
 	}
 	
@@ -38,7 +38,7 @@ public class CerrarPistonLanzar extends Command {
 	protected void end() {
 		// TODO Auto-generated method stub
 		//Robot.pistones.empujeCerrar();
-		Robot.pistones.empujeCerrar();
+		Robot.pistonesE.empujeCerrar();
 
 	}
 

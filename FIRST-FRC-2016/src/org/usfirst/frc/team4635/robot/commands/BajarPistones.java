@@ -2,7 +2,7 @@ package org.usfirst.frc.team4635.robot.commands;
 
 import org.usfirst.frc.team4635.robot.OI;
 import org.usfirst.frc.team4635.robot.Robot;
-import org.usfirst.frc.team4635.robot.subsystems.Pistones;
+import org.usfirst.frc.team4635.robot.subsystems.PistonesL;
 
 import edu.wpi.first.wpilibj.command.Command;
 

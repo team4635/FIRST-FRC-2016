@@ -7,6 +7,7 @@
 
 package org.usfirst.frc.team4635.robot;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -17,7 +18,8 @@ import org.usfirst.frc.team4635.robot.subsystems.Claw;
 import org.usfirst.frc.team4635.robot.subsystems.DriveTrain;
 import org.usfirst.frc.team4635.robot.subsystems.Elevator;
 import org.usfirst.frc.team4635.robot.subsystems.Lanzamiento;
-import org.usfirst.frc.team4635.robot.subsystems.Pistones;
+import org.usfirst.frc.team4635.robot.subsystems.PistonesE;
+import org.usfirst.frc.team4635.robot.subsystems.PistonesL;
 import org.usfirst.frc.team4635.robot.subsystems.Succion;
 import org.usfirst.frc.team4635.robot.subsystems.Wrist;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -31,6 +33,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
     Command autonomousCommand;
+    CameraServer server;
+
     //Command controlPWM;
     
     public static DriveTrain drivetrain;
@@ -39,7 +43,8 @@ public class Robot extends IterativeRobot {
     public static Claw claw;
     public static Lanzamiento lanzamiento;
     public static Succion succion;
-    public static Pistones pistones;
+    public static PistonesL pistones;
+    public static PistonesE pistonesE;
     public static OI oi;
     
 
@@ -55,8 +60,14 @@ public class Robot extends IterativeRobot {
         claw = new Claw();
         lanzamiento = new Lanzamiento();
         succion = new Succion();
-        pistones = new Pistones();
+        pistones = new PistonesL();
+        pistonesE = new PistonesE();
         oi = new OI();
+        
+        server = CameraServer.getInstance();
+        server.setQuality(30);
+        //the camera name (ex "cam0") can be found through the roborio web interface
+        server.startAutomaticCapture("cam2");
        
         
         // instantiate the command used for the autonomous period

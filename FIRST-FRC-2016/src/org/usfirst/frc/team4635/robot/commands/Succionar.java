@@ -17,13 +17,14 @@ public class Succionar extends Command {
 	
 	protected void initialize() {
 		// TODO Auto-generated method stub
-		Robot.succion.setMotorSuccion(.7);
+		//Robot.succion.setMotorSuccion(.7);
 
 	}
 
 	protected void execute() {
 		// TODO Auto-generated method stub
-	
+		Robot.succion.setMotorSuccion(.7);
+
 	}
 
 	protected boolean isFinished() {

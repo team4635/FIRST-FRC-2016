@@ -11,17 +11,15 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
-public class Pistones extends Subsystem {
+public class PistonesL extends Subsystem {
 	private DoubleSolenoid pistonLevantamiento1;
-	//private DoubleSolenoid pistonLevantamiento2;
-	private DoubleSolenoid pistonEmpuje;
+	//private DoubleSolenoid pistonEmpuje;
 	
     
-    public Pistones() {
+    public PistonesL() {
         super();
         pistonLevantamiento1 = new DoubleSolenoid(3,0);
-        //pistonLevantamiento2 = new DoubleSolenoid(1,4);
-        pistonEmpuje = new DoubleSolenoid(1,4);
+        //pistonEmpuje = new DoubleSolenoid(7,4);
         
     }
 
@@ -39,6 +37,7 @@ public class Pistones extends Subsystem {
     	//pistonLevantamiento1.set(DoubleSolenoid.Value.kForward);
     	pistonLevantamiento1.set(DoubleSolenoid.Value.kReverse);
     }
+    /**
     public void empujeAbrir(){
     	pistonEmpuje.set(DoubleSolenoid.Value.kForward);
 
@@ -46,7 +45,7 @@ public class Pistones extends Subsystem {
     public void empujeCerrar(){
     	pistonEmpuje.set(DoubleSolenoid.Value.kReverse);
 
-    }
+    }**/
     
     
 }
