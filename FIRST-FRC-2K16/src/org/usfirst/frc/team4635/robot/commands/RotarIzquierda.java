@@ -8,23 +8,18 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class Succionar extends Command {
+public class RotarIzquierda extends Command {
 	
-	public Succionar() {
-		requires(Robot.succion);
-		
+	public RotarIzquierda() {
+		requires(Robot.drivetrain);
 	}
 	
 	protected void initialize() {
 		// TODO Auto-generated method stub
-		//Robot.succion.setMotorSuccion(.7);
-
 	}
 
 	protected void execute() {
-		// TODO Auto-generated method stub
-		Robot.succion.setMotorSuccion(1.0);
-
+		Robot.drivetrain.drive(-1.0,1.0,DriveTrain.vMax);
 	}
 
 	protected boolean isFinished() {
@@ -34,7 +29,7 @@ public class Succionar extends Command {
 
 	protected void end() {
 		// TODO Auto-generated method stub
-
+		Robot.drivetrain.rotarMotoresIzquierda(0.0);
 	}
 
 	protected void interrupted() {

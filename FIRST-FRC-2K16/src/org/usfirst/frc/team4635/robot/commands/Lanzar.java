@@ -8,32 +8,33 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Command;
 
-public class Succionar extends Command {
+public class Lanzar extends Command {
 	
-	public Succionar() {
+	public Lanzar() {
 		requires(Robot.succion);
-		
+		setTimeout(4);
 	}
 	
 	protected void initialize() {
 		// TODO Auto-generated method stub
-		//Robot.succion.setMotorSuccion(.7);
+		//Robot.succion.setSuccionDrive(.6);
 
 	}
 
 	protected void execute() {
 		// TODO Auto-generated method stub
-		Robot.succion.setMotorSuccion(1.0);
-
+		Robot.succion.setSuccionDrive(-1.0);
 	}
 
 	protected boolean isFinished() {
 		// TODO Auto-generated method stub
-		return false;
+		return isTimedOut();
 	}
 
 	protected void end() {
 		// TODO Auto-generated method stub
+		Robot.succion.setSuccionDrive(1.0);
+		Robot.servoL.lanzarServo(170);
 
 	}
 

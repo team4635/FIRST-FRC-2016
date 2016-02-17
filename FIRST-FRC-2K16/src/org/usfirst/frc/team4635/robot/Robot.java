@@ -7,21 +7,18 @@
 
 package org.usfirst.frc.team4635.robot;
 
-import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team4635.robot.commands.Autonomous;
 import org.usfirst.frc.team4635.robot.commands.ControlPWM;
-import org.usfirst.frc.team4635.robot.subsystems.Claw;
 import org.usfirst.frc.team4635.robot.subsystems.DriveTrain;
-import org.usfirst.frc.team4635.robot.subsystems.Elevator;
-import org.usfirst.frc.team4635.robot.subsystems.Lanzamiento;
-import org.usfirst.frc.team4635.robot.subsystems.PistonesE;
-import org.usfirst.frc.team4635.robot.subsystems.PistonesL;
-import org.usfirst.frc.team4635.robot.subsystems.Succion;
-import org.usfirst.frc.team4635.robot.subsystems.Wrist;
+import org.usfirst.frc.team4635.robot.subsystems.ServoL;
+//import org.usfirst.frc.team4635.robot.subsystems.Lanzamiento;
+import org.usfirst.frc.team4635.robot.subsystems.SuccionLanzamiento;
+import org.usfirst.frc.team4635.robot.subsystems.Ventana;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
@@ -33,20 +30,16 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class Robot extends IterativeRobot {
     Command autonomousCommand;
-    CameraServer server1;
-    CameraServer server2;
-
-
     //Command controlPWM;
     
     public static DriveTrain drivetrain;
-    public static Elevator elevator;
-    public static Wrist wrist;
-    public static Claw claw;
-    public static Lanzamiento lanzamiento;
-    public static Succion succion;
-    public static PistonesL pistones;
-    public static PistonesE pistonesE;
+    //public static Elevator elevator;
+    //public static Wrist wrist;
+    //public static Claw claw;
+    //public static Lanzamiento lanzamiento;
+    public static SuccionLanzamiento succion;
+    public static Ventana ventana;
+    public static ServoL servoL;
     public static OI oi;
     
 
@@ -57,25 +50,14 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
         // Initialize all subsystems
         drivetrain = new DriveTrain();
-        elevator = new Elevator();
-        wrist = new Wrist();
-        claw = new Claw();
-        lanzamiento = new Lanzamiento();
-        succion = new Succion();
-        pistones = new PistonesL();
-        pistonesE = new PistonesE();
+        //elevator = new Elevator();
+        //wrist = new Wrist();
+        //claw = new Claw();
+        //lanzamiento = new Lanzamiento();
+        succion = new SuccionLanzamiento();
+        ventana = new Ventana();
+        servoL = new ServoL();
         oi = new OI();
-        
-        server1 = CameraServer.getInstance();
-        server1.setQuality(30);
-        server1.startAutomaticCapture("cam2");
-
-        server2 = CameraServer.getInstance();
-        //the camera name (ex "cam0") can be found through the roborio web interface
-        server2.setQuality(30);
-        //the camera name (ex "cam0") can be found through the roborio web interface
-        server2.startAutomaticCapture("cam1");
-
        
         
         // instantiate the command used for the autonomous period
@@ -84,9 +66,9 @@ public class Robot extends IterativeRobot {
 
         // Show what command your subsystem is running on the SmartDashboard
         SmartDashboard.putData(drivetrain);
-        SmartDashboard.putData(elevator);
-        SmartDashboard.putData(wrist);
-        SmartDashboard.putData(claw);
+        //SmartDashboard.putData(elevator);
+        //SmartDashboard.putData(wrist);
+        //SmartDashboard.putData(claw);
     }
 
     public void autonomousInit() {
@@ -130,9 +112,9 @@ public class Robot extends IterativeRobot {
 	 * The log method puts interesting information to the SmartDashboard.
 	 */
     private void log() {
-        wrist.log();
-        elevator.log();
-        drivetrain.log();
-        claw.log();
+        //wrist.log();
+        //elevator.log();
+        //drivetrain.log();
+        //claw.log();
     }
 }

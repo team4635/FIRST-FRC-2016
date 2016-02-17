@@ -30,12 +30,14 @@ public class PistonesL extends Subsystem {
     
     public void levantar(){
     	//pistonLevantamiento1.set(DoubleSolenoid.Value.kForward);
-    	pistonLevantamiento1.set(DoubleSolenoid.Value.kForward);
+    	pistonLevantamiento1.set(DoubleSolenoid.Value.kReverse);
+
     }
     public void bajar(){
 
-    	//pistonLevantamiento1.set(DoubleSolenoid.Value.kForward);
-    	pistonLevantamiento1.set(DoubleSolenoid.Value.kReverse);
+    	//pistonLevantamiento1.set(DoubleSolenoid.Value.kReverse);
+    	pistonLevantamiento1.set(DoubleSolenoid.Value.kForward);
+
     }
     /**
     public void empujeAbrir(){
